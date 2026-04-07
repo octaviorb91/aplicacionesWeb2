@@ -1,0 +1,212 @@
+[
+  {
+    "id": 101,
+    "nombre": "Notebook Lenovo",
+    "desc": "Portátil de 15 pulgadas con 8GB RAM y 256GB SSD",
+    "precio": 750000,
+    "imagen": "notebook_lenovo.jpg"
+  },
+  {
+    "id": 102,
+    "nombre": "Mouse inalámbrico Logitech",
+    "desc": "Mouse ergonómico con conexión Bluetooth",
+    "precio": 15000,
+    "imagen": "mouse_logitech.jpg"
+  },
+  {
+    "id": 103,
+    "nombre": "Teclado mecánico Redragon",
+    "desc": "Teclado gamer con retroiluminación RGB",
+    "precio": 45000,
+    "imagen": "teclado_redragon.jpg"
+  },
+  {
+    "id": 104,
+    "nombre": "Monitor Samsung 24''",
+    "desc": "Monitor LED Full HD con entrada HDMI",
+    "precio": 120000,
+    "imagen": "monitor_samsung.jpg"
+  },
+  {
+    "id": 105,
+    "nombre": "Auriculares Sony WH-1000XM4",
+    "desc": "Auriculares inalámbricos con cancelación de ruido",
+    "precio": 220000,
+    "imagen": "auriculares_sony.jpg"
+  },
+  {
+    "id": 106,
+    "nombre": "Smartphone Samsung Galaxy S25",
+    "desc": "Celular con pantalla AMOLED y 256GB de almacenamiento",
+    "precio": 950000,
+    "imagen": "galaxy_s25.jpg"
+  },
+  {
+    "id": 107,
+    "nombre": "iPhone 15 Pro",
+    "desc": "Smartphone Apple con chip A17 y cámara triple",
+    "precio": 1200000,
+    "imagen": "iphone15pro.jpg"
+  },
+  {
+    "id": 108,
+    "nombre": "Tablet iPad Air",
+    "desc": "Pantalla de 10.9 pulgadas y chip M1",
+    "precio": 800000,
+    "imagen": "ipad_air.jpg"
+  },
+  {
+    "id": 109,
+    "nombre": "Impresora HP DeskJet",
+    "desc": "Impresora multifunción con WiFi",
+    "precio": 95000,
+    "imagen": "impresora_hp.jpg"
+  },
+  {
+    "id": 110,
+    "nombre": "Disco externo Seagate 2TB",
+    "desc": "Disco duro portátil USB 3.0",
+    "precio": 85000,
+    "imagen": "disco_seagate.jpg"
+  },
+  {
+    "id": 111,
+    "nombre": "SSD Kingston 1TB",
+    "desc": "Unidad de estado sólido NVMe",
+    "precio": 110000,
+    "imagen": "ssd_kingston.jpg"
+  },
+  {
+    "id": 112,
+    "nombre": "Cámara Canon EOS Rebel",
+    "desc": "Cámara réflex digital con lente 18-55mm",
+    "precio": 600000,
+    "imagen": "canon_eos.jpg"
+  },
+  {
+    "id": 113,
+    "nombre": "Parlante JBL Flip 6",
+    "desc": "Parlante portátil Bluetooth resistente al agua",
+    "precio": 95000,
+    "imagen": "jbl_flip6.jpg"
+  },
+  {
+    "id": 114,
+    "nombre": "Smartwatch Apple Watch SE",
+    "desc": "Reloj inteligente con monitoreo de salud",
+    "precio": 250000,
+    "imagen": "apple_watch_se.jpg"
+  },
+  {
+    "id": 115,
+    "nombre": "Smartwatch Samsung Galaxy Watch",
+    "desc": "Reloj inteligente con GPS y NFC",
+    "precio": 230000,
+    "imagen": "galaxy_watch.jpg"
+  },
+  {
+    "id": 116,
+    "nombre": "Consola PlayStation 5",
+    "desc": "Consola de videojuegos con SSD ultrarrápido",
+    "precio": 1300000,
+    "imagen": "ps5.jpg"
+  },
+  {
+    "id": 117,
+    "nombre": "Consola Xbox Series X",
+    "desc": "Consola de videojuegos con 1TB SSD",
+    "precio": 1250000,
+    "imagen": "xbox_seriesx.jpg"
+  },
+  {
+    "id": 118,
+    "nombre": "Nintendo Switch OLED",
+    "desc": "Consola híbrida con pantalla OLED",
+    "precio": 900000,
+    "imagen": "switch_oled.jpg"
+  },
+  {
+    "id": 119,
+    "nombre": "Router TP-Link Archer",
+    "desc": "Router WiFi 6 de alta velocidad",
+    "precio": 70000,
+    "imagen": "router_tplink.jpg"
+  },
+  {
+    "id": 120,
+    "nombre": "Proyector Epson",
+    "desc": "Proyector Full HD para oficina o cine en casa",
+    "precio": 350000,
+    "imagen": "proyector_epson.jpg"
+  },
+  {
+    "id": 121,
+    "nombre": "Silla gamer DXRacer",
+    "desc": "Silla ergonómica con soporte lumbar",
+    "precio": 180000,
+    "imagen": "silla_dxracer.jpg"
+  },
+  {
+    "id": 122,
+    "nombre": "Escritorio regulable",
+    "desc": "Escritorio ajustable en altura para oficina",
+    "precio": 200000,
+    "imagen": "escritorio_regulable.jpg"
+  },
+  {
+    "id": 123,
+    "nombre": "Lámpara LED de escritorio",
+    "desc": "Lámpara con luz regulable y puerto USB",
+    "precio": 25000,
+    "imagen": "lampara_led.jpg"
+  },
+  {
+    "id": 124,
+    "nombre": "Cafetera Nespresso",
+    "desc": "Cafetera automática para cápsulas",
+    "precio": 120000,
+    "imagen": "cafetera_nespresso.jpg"
+  },
+  {
+    "id": 125,
+    "nombre": "Heladera Samsung",
+    "desc": "Heladera No Frost con freezer inferior",
+    "precio": 950000,
+    "imagen": "heladera_samsung.jpg"
+  },
+  {
+    "id": 126,
+    "nombre": "Microondas LG",
+    "desc": "Microondas digital con grill",
+    "precio": 80000,
+    "imagen": "microondas_lg.jpg"
+  },
+  {
+    "id": 127,
+    "nombre": "Lavarropas Whirlpool",
+    "desc": "Lavarropas automático de 8kg",
+    "precio": 600000,
+    "imagen": "lavarropas_whirlpool.jpg"
+  },
+  {
+    "id": 128,
+    "nombre": "Aspiradora Philips",
+    "desc": "Aspiradora ciclónica sin bolsa",
+    "precio": 95000,
+    "imagen": "aspiradora_philips.jpg"
+  },
+  {
+    "id": 129,
+    "nombre": "Ventilador de pie Liliana",
+    "desc": "Ventilador de 3 velocidades con oscilación",
+    "precio": 45000,
+    "imagen": "ventilador_liliana.jpg"
+  },
+  {
+    "id": 130,
+    "nombre": "Televisor LG 55''",
+    "desc": "Smart TV 4K UHD con WebOS",
+    "precio": 700000,
+    "imagen": "tv_lg55.jpg"
+  }
+]
