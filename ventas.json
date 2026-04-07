@@ -1,0 +1,155 @@
+[
+  {
+    "id": 5001,
+    "id_usuario": 1,
+    "fecha": "2026-04-01",
+    "total": 750000,
+    "direccion": "Av. Colón 123, Córdoba",
+    "productos": [
+      { "id_producto": 101, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5002,
+    "id_usuario": 2,
+    "fecha": "2026-04-01",
+    "total": 30000,
+    "direccion": "San Martín 456, Córdoba",
+    "productos": [
+      { "id_producto": 102, "cantidad": 2 }
+    ]
+  },
+  {
+    "id": 5003,
+    "id_usuario": 3,
+    "fecha": "2026-04-02",
+    "total": 165000,
+    "direccion": "Belgrano 789, Córdoba",
+    "productos": [
+      { "id_producto": 103, "cantidad": 1 },
+      { "id_producto": 104, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5004,
+    "id_usuario": 4,
+    "fecha": "2026-04-02",
+    "total": 220000,
+    "direccion": "Ituzaingó 321, Córdoba",
+    "productos": [
+      { "id_producto": 105, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5005,
+    "id_usuario": 5,
+    "fecha": "2026-04-03",
+    "total": 950000,
+    "direccion": "Av. Sabattini 654, Córdoba",
+    "productos": [
+      { "id_producto": 106, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5006,
+    "id_usuario": 6,
+    "fecha": "2026-04-03",
+    "total": 1200000,
+    "direccion": "Maipú 987, Córdoba",
+    "productos": [
+      { "id_producto": 107, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5007,
+    "id_usuario": 7,
+    "fecha": "2026-04-04",
+    "total": 800000,
+    "direccion": "Av. Patria 111, Córdoba",
+    "productos": [
+      { "id_producto": 108, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5008,
+    "id_usuario": 8,
+    "fecha": "2026-04-04",
+    "total": 95000,
+    "direccion": "Chacabuco 222, Córdoba",
+    "productos": [
+      { "id_producto": 109, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5009,
+    "id_usuario": 9,
+    "fecha": "2026-04-05",
+    "total": 195000,
+    "direccion": "Av. Olmos 333, Córdoba",
+    "productos": [
+      { "id_producto": 110, "cantidad": 1 },
+      { "id_producto": 113, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5010,
+    "id_usuario": 10,
+    "fecha": "2026-04-05",
+    "total": 250000,
+    "direccion": "Rivadavia 444, Córdoba",
+    "productos": [
+      { "id_producto": 114, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5011,
+    "id_usuario": 1,
+    "fecha": "2026-04-06",
+    "total": 230000,
+    "direccion": "Av. Colón 123, Córdoba",
+    "productos": [
+      { "id_producto": 115, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5012,
+    "id_usuario": 2,
+    "fecha": "2026-04-06",
+    "total": 1300000,
+    "direccion": "San Martín 456, Córdoba",
+    "productos": [
+      { "id_producto": 116, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5013,
+    "id_usuario": 3,
+    "fecha": "2026-04-06",
+    "total": 1250000,
+    "direccion": "Belgrano 789, Córdoba",
+    "productos": [
+      { "id_producto": 117, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5014,
+    "id_usuario": 4,
+    "fecha": "2026-04-06",
+    "total": 900000,
+    "direccion": "Ituzaingó 321, Córdoba",
+    "productos": [
+      { "id_producto": 118, "cantidad": 1 }
+    ]
+  },
+  {
+    "id": 5015,
+    "id_usuario": 5,
+    "fecha": "2026-04-06",
+    "total": 270000,
+    "direccion": "Av. Sabattini 654, Córdoba",
+    "productos": [
+      { "id_producto": 119, "cantidad": 1 },
+      { "id_producto": 120, "cantidad": 1 }
+    ]
+  }
+]
