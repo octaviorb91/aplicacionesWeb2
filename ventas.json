@@ -7,7 +7,8 @@
     "direccion": "Av. Colón 123, Córdoba",
     "productos": [
       { "id_producto": 101, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5002,
@@ -17,7 +18,8 @@
     "direccion": "San Martín 456, Córdoba",
     "productos": [
       { "id_producto": 102, "cantidad": 2 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5003,
@@ -28,7 +30,8 @@
     "productos": [
       { "id_producto": 103, "cantidad": 1 },
       { "id_producto": 104, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5004,
@@ -38,7 +41,8 @@
     "direccion": "Ituzaingó 321, Córdoba",
     "productos": [
       { "id_producto": 105, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5005,
@@ -48,7 +52,8 @@
     "direccion": "Av. Sabattini 654, Córdoba",
     "productos": [
       { "id_producto": 106, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5006,
@@ -58,7 +63,8 @@
     "direccion": "Maipú 987, Córdoba",
     "productos": [
       { "id_producto": 107, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5007,
@@ -68,7 +74,8 @@
     "direccion": "Av. Patria 111, Córdoba",
     "productos": [
       { "id_producto": 108, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5008,
@@ -78,7 +85,8 @@
     "direccion": "Chacabuco 222, Córdoba",
     "productos": [
       { "id_producto": 109, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5009,
@@ -89,7 +97,8 @@
     "productos": [
       { "id_producto": 110, "cantidad": 1 },
       { "id_producto": 113, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5010,
@@ -99,7 +108,8 @@
     "direccion": "Rivadavia 444, Córdoba",
     "productos": [
       { "id_producto": 114, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5011,
@@ -109,7 +119,8 @@
     "direccion": "Av. Colón 123, Córdoba",
     "productos": [
       { "id_producto": 115, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5012,
@@ -119,7 +130,8 @@
     "direccion": "San Martín 456, Córdoba",
     "productos": [
       { "id_producto": 116, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5013,
@@ -129,7 +141,8 @@
     "direccion": "Belgrano 789, Córdoba",
     "productos": [
       { "id_producto": 117, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   },
   {
     "id": 5014,
@@ -139,7 +152,8 @@
     "direccion": "Ituzaingó 321, Córdoba",
     "productos": [
       { "id_producto": 118, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": false
   },
   {
     "id": 5015,
@@ -150,6 +164,8 @@
     "productos": [
       { "id_producto": 119, "cantidad": 1 },
       { "id_producto": 120, "cantidad": 1 }
-    ]
+    ],
+    "pago_efectivo": true
   }
 ]
+
