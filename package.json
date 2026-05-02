@@ -1,0 +1,26 @@
+{
+  "name": "tp1",
+  "version": "1.0.0",
+  "description": "Repositorio de la materia Aplicaciones Web 2 de IES",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octaviorb91/aplicacionesWeb2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octaviorb91/aplicacionesWeb2/issues"
+  },
+  "homepage": "https://github.com/octaviorb91/aplicacionesWeb2#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}

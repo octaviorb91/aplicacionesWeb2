@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "nombre": "Ana",
-    "apellido": "Pérez",
-    "email": "ana.perez@example.com",
-    "contraseña": "ana123"
-  },
-  {
     "id": 2,
     "nombre": "Carlos",
     "apellido": "Gómez",
