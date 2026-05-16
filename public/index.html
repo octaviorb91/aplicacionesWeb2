@@ -7,15 +7,40 @@
     <title>Login</title>
 </head>
 <body class="bg-gray-950 text-gray-300">
-    <div class="flex justify-center items-center">
-        <div class="bg-gray-800 rounded-3xl mt-20 p-5">
-            <h1 class="text-2xl font-bold mb-4">Inicio de sesión</h1>
+    <div class="flex flex-col justify-center items-center min-h-screen">
+        <div class="bg-gray-800 rounded-3xl p-6 w-80 sm:w-96 shadow-xl">
+            <h1 class="text-2xl font-bold mb-4 text-white">Inicio de sesión</h1>
 
-            <input type="text" placeholder="Usuario" class="w-full mt-10 rounded-2xl p-2 bg-gray-700 text-gray-200" id="txtName">
-            <input type="password" placeholder="Contraseña" class="w-full p-2 mt-10 rounded-2xl bg-gray-700 text-gray-200" id="txtPassword">
-            <button class="mt-5 bg-transparent p-2 border-2 border-gray-700 rounded-2xl hover:bg-gray-700 hover:text-gray-200 transition-all" id="btnLogin">
+            <input type="text" placeholder="Usuario" class="w-full mt-6 rounded-2xl p-2.5 bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-600" id="txtName">
+            <input type="password" placeholder="Contraseña" class="w-full p-2.5 mt-6 rounded-2xl bg-gray-700 text-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-600" id="txtPassword">
+            
+            <button class="w-full mt-6 bg-transparent p-2.5 border-2 border-gray-700 rounded-2xl hover:bg-gray-700 hover:text-gray-200 transition-all font-semibold" id="btnLogin">
                 Iniciar sesión
             </button>
+        </div>
+
+        <div class="mt-8 bg-gray-900 border border-gray-800 rounded-2xl p-4 w-80 sm:w-96 text-sm">
+            <h2 class="text-xs font-bold tracking-wider uppercase text-gray-500 mb-3 flex items-center gap-1.5">
+                Usuarios de prueba
+            </h2>
+            <div class="space-y-2.5">
+                <div class="bg-gray-950 p-2 rounded-xl border border-gray-800/60 font-mono text-xs flex justify-between">
+                    <div>
+                        <span class="text-gray-500">user:</span> <span class="text-blue-400">diego.lopez</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">pass:</span> <span class="text-gray-400">diego987</span>
+                    </div>
+                </div>
+                <div class="bg-gray-950 p-2 rounded-xl border border-gray-800/60 font-mono text-xs flex justify-between">
+                    <div>
+                        <span class="text-gray-500">user:</span> <span class="text-blue-400">sofia.ramirez</span>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">pass:</span> <span class="text-gray-400">sofi111</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

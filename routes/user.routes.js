@@ -55,6 +55,52 @@ router.post('/login', (req, res) => {
     }
 });
 
+// Rutas para los productos y las ventas
+
+// 1. Obtener todos los productos para la interfaz
+router.get('/productos/all', (req, res) => {
+    res.status(200).json(productos);
+});
+
+// 2. Registrar una nueva orden de compra
+router.post('/ventas/comprar', async (req, res) => {
+    const { username, productosCarrito, total, direccion } = req.body;
+
+    if (!username || !productosCarrito || productosCarrito.length === 0) {
+        return res.status(400).json({ message: "Datos de compra incompletos" });
+    }
+
+    try {
+        // Buscamos el usuario para obtener su ID real
+        const userFound = usuarios.find(u => u.username === username);
+        const id_usuario = userFound ? userFound.id : 999; // ID por defecto si no se encuentra
+
+        // Generamos un nuevo ID incremental para la venta
+        const nuevoIdVenta = ventas.length > 0 ? ventas[ventas.length - 1].id + 1 : 5001;
+
+        const nuevaOrden = {
+            id: nuevoIdVenta,
+            id_usuario: id_usuario,
+            fecha: new Date().toISOString().split('T')[0], // Formato YYYY-MM-DD
+            total: total,
+            direccion: direccion || "Retiro por sucursal",
+            productos: productosCarrito.map(p => ({
+                id_producto: p.id,
+                cantidad: p.cantidad
+            })),
+            pago_efectivo: true
+        };
+
+        // Guardamos en el array en memoria y persistimos en el archivo JSON
+        ventas.push(nuevaOrden);
+        await writeFile('./data/ventas.json', JSON.stringify(ventas, null, 2));
+
+        res.status(201).json({ status: true, message: "Compra procesada con éxito", id_orden: nuevoIdVenta });
+    } catch (error) {
+        console.error("Error al procesar la compra:", error);
+        res.status(500).json({ status: false, message: "Error interno del servidor al procesar la compra" });
+    }
+});
 // Metodo Post para consultar el nombre de un usuario por id
 /* router.post('/name/:id', (req, res) => {
     const { id } = req.params; // id enviado en los parámetros de la URL

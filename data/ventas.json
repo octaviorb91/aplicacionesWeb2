@@ -6,7 +6,10 @@
     "total": 750000,
     "direccion": "Av. Colón 123, Córdoba",
     "productos": [
-      { "id_producto": 101, "cantidad": 1 }
+      {
+        "id_producto": 101,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -17,7 +20,10 @@
     "total": 30000,
     "direccion": "San Martín 456, Córdoba",
     "productos": [
-      { "id_producto": 102, "cantidad": 2 }
+      {
+        "id_producto": 102,
+        "cantidad": 2
+      }
     ],
     "pago_efectivo": false
   },
@@ -28,8 +34,14 @@
     "total": 165000,
     "direccion": "Belgrano 789, Córdoba",
     "productos": [
-      { "id_producto": 103, "cantidad": 1 },
-      { "id_producto": 104, "cantidad": 1 }
+      {
+        "id_producto": 103,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 104,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -40,7 +52,10 @@
     "total": 220000,
     "direccion": "Ituzaingó 321, Córdoba",
     "productos": [
-      { "id_producto": 105, "cantidad": 1 }
+      {
+        "id_producto": 105,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -51,7 +66,10 @@
     "total": 950000,
     "direccion": "Av. Sabattini 654, Córdoba",
     "productos": [
-      { "id_producto": 106, "cantidad": 1 }
+      {
+        "id_producto": 106,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -62,7 +80,10 @@
     "total": 1200000,
     "direccion": "Maipú 987, Córdoba",
     "productos": [
-      { "id_producto": 107, "cantidad": 1 }
+      {
+        "id_producto": 107,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -73,7 +94,10 @@
     "total": 800000,
     "direccion": "Av. Patria 111, Córdoba",
     "productos": [
-      { "id_producto": 108, "cantidad": 1 }
+      {
+        "id_producto": 108,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -84,7 +108,10 @@
     "total": 95000,
     "direccion": "Chacabuco 222, Córdoba",
     "productos": [
-      { "id_producto": 109, "cantidad": 1 }
+      {
+        "id_producto": 109,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -95,8 +122,14 @@
     "total": 195000,
     "direccion": "Av. Olmos 333, Córdoba",
     "productos": [
-      { "id_producto": 110, "cantidad": 1 },
-      { "id_producto": 113, "cantidad": 1 }
+      {
+        "id_producto": 110,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 113,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -107,7 +140,10 @@
     "total": 250000,
     "direccion": "Rivadavia 444, Córdoba",
     "productos": [
-      { "id_producto": 114, "cantidad": 1 }
+      {
+        "id_producto": 114,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -118,7 +154,10 @@
     "total": 230000,
     "direccion": "Av. Colón 123, Córdoba",
     "productos": [
-      { "id_producto": 115, "cantidad": 1 }
+      {
+        "id_producto": 115,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -129,7 +168,10 @@
     "total": 1300000,
     "direccion": "San Martín 456, Córdoba",
     "productos": [
-      { "id_producto": 116, "cantidad": 1 }
+      {
+        "id_producto": 116,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -140,7 +182,10 @@
     "total": 1250000,
     "direccion": "Belgrano 789, Córdoba",
     "productos": [
-      { "id_producto": 117, "cantidad": 1 }
+      {
+        "id_producto": 117,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   },
@@ -151,7 +196,10 @@
     "total": 900000,
     "direccion": "Ituzaingó 321, Córdoba",
     "productos": [
-      { "id_producto": 118, "cantidad": 1 }
+      {
+        "id_producto": 118,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": false
   },
@@ -162,10 +210,55 @@
     "total": 270000,
     "direccion": "Av. Sabattini 654, Córdoba",
     "productos": [
-      { "id_producto": 119, "cantidad": 1 },
-      { "id_producto": 120, "cantidad": 1 }
+      {
+        "id_producto": 119,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 120,
+        "cantidad": 1
+      }
+    ],
+    "pago_efectivo": true
+  },
+  {
+    "id": 5016,
+    "id_usuario": 6,
+    "fecha": "2026-05-16",
+    "total": 1090000,
+    "direccion": "Retiro por sucursal",
+    "productos": [
+      {
+        "id_producto": 101,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 104,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 105,
+        "cantidad": 1
+      }
+    ],
+    "pago_efectivo": true
+  },
+  {
+    "id": 5017,
+    "id_usuario": 6,
+    "fecha": "2026-05-16",
+    "total": 340000,
+    "direccion": "linco 9810",
+    "productos": [
+      {
+        "id_producto": 104,
+        "cantidad": 1
+      },
+      {
+        "id_producto": 105,
+        "cantidad": 1
+      }
     ],
     "pago_efectivo": true
   }
 ]
-
