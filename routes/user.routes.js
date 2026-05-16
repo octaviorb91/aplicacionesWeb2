@@ -57,12 +57,12 @@ router.post('/login', (req, res) => {
 
 // Rutas para los productos y las ventas
 
-// 1. Obtener todos los productos para la interfaz
+// Llamar a todos los productos
 router.get('/productos/all', (req, res) => {
     res.status(200).json(productos);
 });
 
-// 2. Registrar una nueva orden de compra
+// Registrar una orden de compra
 router.post('/ventas/comprar', async (req, res) => {
     const { username, productosCarrito, total, direccion } = req.body;
 
@@ -91,7 +91,7 @@ router.post('/ventas/comprar', async (req, res) => {
             pago_efectivo: true
         };
 
-        // Guardamos en el array en memoria y persistimos en el archivo JSON
+        // Guardamos en el array en memoria y grabamos en el archivo JSON
         ventas.push(nuevaOrden);
         await writeFile('./data/ventas.json', JSON.stringify(ventas, null, 2));
 
