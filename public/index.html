@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+</head>
+<body class="bg-gray-950 text-gray-300">
+    <div class="flex justify-center items-center">
+        <div class="bg-gray-800 rounded-3xl mt-20 p-5">
+            <h1 class="text-2xl font-bold mb-4">Inicio de sesión</h1>
+
+            <input type="text" placeholder="Usuario" class="w-full mt-10 rounded-2xl p-2 bg-gray-700 text-gray-200" id="txtName">
+            <input type="password" placeholder="Contraseña" class="w-full p-2 mt-10 rounded-2xl bg-gray-700 text-gray-200" id="txtPassword">
+            <button class="mt-5 bg-transparent p-2 border-2 border-gray-700 rounded-2xl hover:bg-gray-700 hover:text-gray-200 transition-all" id="btnLogin">
+                Iniciar sesión
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="./auth/auth.js"></script>
+</body>
+</html>

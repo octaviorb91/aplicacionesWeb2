@@ -13,7 +13,10 @@ app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);
 });
 
-// Rutas de usuarios
+// Levantar el front
+app.use(express.static('./public'));
+
+// Rutas de endPoints
 app.use("/users", userRoutes);
 
 
