@@ -1,0 +1,9 @@
+h1 {
+  font-family: 'Uncial Antiqua', cursive;
+  color: gold; /* color dorado */
+  text-shadow: 
+    -3px -3px 0 black,  
+     3px -3px 0 black,
+    -3px  3px 0 black,
+     3px  3px 0 black; /* borde negro */
+}

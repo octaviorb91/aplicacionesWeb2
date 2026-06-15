@@ -1,174 +1,181 @@
 import { Router } from "express";
-import { readFile, writeFile } from 'fs/promises';
-
+import { writeFile } from 'fs/promises';
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from 'fs';
+import bcrypt from 'bcrypt'; // Importamos bcrypt
+import { Usuario, Producto, Venta } from '../models/db.js';
 
 const router = Router();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-//importar json
-const fileProductos = await readFile('./data/productos.json', 'utf-8');
-const fileUsuarios = await readFile('./data/usuarios.json', 'utf-8');
-const fileVentas = await readFile('./data/ventas.json', 'utf-8');
+const dirImages = path.join(__dirname, '../public/images');
+if (!fs.existsSync(dirImages)) {
+    fs.mkdirSync(dirImages, { recursive: true });
+}
 
-const productos = JSON.parse(fileProductos);
-const usuarios = JSON.parse(fileUsuarios);
-const ventas = JSON.parse(fileVentas);
+const guardarFotoBase64 = async (base64String, username) => {
+    try {
+        const matches = base64String.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+        if (!matches || matches.length !== 3) return null;
+        const mimeType = matches[1]; 
+        const base64Data = matches[2]; 
+        const buffer = Buffer.from(base64Data, 'base64'); 
+        let extension = 'jpg';
+        if (mimeType.includes('png')) extension = 'png';
+        if (mimeType.includes('webp')) extension = 'webp';
+        if (mimeType.includes('gif')) extension = 'gif';
+        const fileName = `${username}.${extension}`;
+        const pathDestino = path.join(dirImages, fileName);
+        await writeFile(pathDestino, buffer);
+        return `/images/${fileName}`;
+    } catch (error) {
+        console.error("Error al procesar la imagen:", error);
+        return null;
+    }
+};
 
-// Metodo Get
-
-// Metodo Get para seleccionar todos los usuarios
-/* router.get('/all', (req, res) => {
-    res.status(200).json(usuarios);
+// MÉTODOS GET
+router.get('/all', async (req, res) => {
+    try {
+        const usuarios = await Usuario.find();
+        res.status(200).json(usuarios);
+    } catch (error) {
+        res.status(500).json({ status: false, message: "Error interno." });
+    }
 });
 
-// Metodo GET para seleccionar solo los nombres de todos los usuarios
-router.get('/names', (req, res) => {
+router.get('/names', async (req, res) => {
     try {
+        const usuarios = await Usuario.find({}, 'nombre');
         const nombres = usuarios.map(u => u.nombre);
         res.status(200).json(nombres);
     } catch (err) {
         res.status(500).json({ message: 'Error al obtener los nombres' });
     }
 });
- */
 
-// Metodo Post
-
-
-
-// Metodo post para buscar el usuario
-router.post('/login', (req, res) => {
-    const username = req.body.username
-    const password = req.body.password
-
-    const result = usuarios.find(e => e.username === username && e.password === password);
-
-    if (result) {
-        const data = {
-            nombre: result.nombre,
-            apellido: result.apellido,
-            username: result.username,
-            status: true
-        }
-        res.status(200).json(data);
-    } else {
-        res.status(404).json({ status:false });
-    }
-});
-
-// Rutas para los productos y las ventas
-
-// Llamar a todos los productos
-router.get('/productos/all', (req, res) => {
-    res.status(200).json(productos);
-});
-
-// Registrar una orden de compra
-router.post('/ventas/comprar', async (req, res) => {
-    const { username, productosCarrito, total, direccion } = req.body;
-
-    if (!username || !productosCarrito || productosCarrito.length === 0) {
-        return res.status(400).json({ message: "Datos de compra incompletos" });
-    }
-
+// MÉTODOS POST (Registro y Login con Bcrypt)
+router.post('/register', async (req, res) => {
     try {
-        // Buscamos el usuario para obtener su ID real
-        const userFound = usuarios.find(u => u.username === username);
-        const id_usuario = userFound ? userFound.id : 999; // ID por defecto si no se encuentra
+        const { nombre, apellido, email, password, username, photoBase64 } = req.body;
 
-        // Generamos un nuevo ID incremental para la venta
-        const nuevoIdVenta = ventas.length > 0 ? ventas[ventas.length - 1].id + 1 : 5001;
+        if (!nombre || !email || !password) {
+            return res.status(400).json({ status: false, message: "Faltan datos." });
+        }
 
-        const nuevaOrden = {
-            id: nuevoIdVenta,
-            id_usuario: id_usuario,
-            fecha: new Date().toISOString().split('T')[0], // Formato YYYY-MM-DD
-            total: total,
-            direccion: direccion || "Retiro por sucursal",
-            productos: productosCarrito.map(p => ({
-                id_producto: p.id,
-                cantidad: p.cantidad
-            })),
-            pago_efectivo: true
-        };
+        const existeEmail = await Usuario.findOne({ email: new RegExp(`^${email}$`, 'i') });
+        if (existeEmail) return res.status(400).json({ status: false, message: "El correo ya existe." });
 
-        // Guardamos en el array en memoria y grabamos en el archivo JSON
-        ventas.push(nuevaOrden);
-        await writeFile('./data/ventas.json', JSON.stringify(ventas, null, 2));
+        // Encriptamos la contraseña
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        res.status(201).json({ status: true, message: "Compra procesada con éxito", id_orden: nuevoIdVenta });
+        const ultimoUser = await Usuario.findOne().sort({ id: -1 });
+        const nuevoId = ultimoUser && ultimoUser.id ? ultimoUser.id + 1 : 1;
+
+        let photoUrlFinal = photoBase64 ? await guardarFotoBase64(photoBase64, username) : 
+            `https://ui-avatars.com/api/?name=${encodeURIComponent(nombre)}+${encodeURIComponent(apellido || '')}&background=28a745&color=fff`;
+
+        const nuevoUsuario = new Usuario({
+            id: nuevoId,
+            nombre,
+            apellido: apellido || "",
+            email,
+            password: hashedPassword, // Guardamos el hash
+            username: username || `${nombre.toLowerCase()}.${(apellido || '').toLowerCase()}`,
+            photoUrl: photoUrlFinal
+        });
+
+        await nuevoUsuario.save();
+        res.status(201).json({ status: true, message: "Usuario creado", usuario: nuevoUsuario });
     } catch (error) {
-        console.error("Error al procesar la compra:", error);
-        res.status(500).json({ status: false, message: "Error interno del servidor al procesar la compra" });
-    }
-});
-// Metodo Post para consultar el nombre de un usuario por id
-/* router.post('/name/:id', (req, res) => {
-    const { id } = req.params; // id enviado en los parámetros de la URL
-    const user = usuarios.find(e => e.id === parseInt(id));
-
-    if (user) {
-        res.status(200).json({ nombre: user.nombre });
-    } else {
-        res.status(404).json({ message: 'Usuario no encontrado' });
+        res.status(500).json({ status: false, message: "Error al crear cuenta." });
     }
 });
 
-// Metodo Post para consultar la contraseña de un usuario por id
-router.post('/pass/:id', (req, res) => {
-    const { id } = req.params; // id enviado en los parámetros de la URL
-    const user = usuarios.find(e => e.id === parseInt(id));
+router.post('/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const user = await Usuario.findOne({ username: username });
 
-    if (user) {
-        res.status(200).json({ password: user.password });
-    } else {
-        res.status(404).json({ message: 'Usuario no encontrado' });
+        // Comparamos el password ingresado con el hash almacenado
+        if (user && await bcrypt.compare(password, user.password)) {
+            res.status(200).json({
+                id: user.id,
+                nombre: user.nombre,
+                apellido: user.apellido,
+                username: user.username,
+                email: user.email,
+                photoUrl: user.photoUrl,
+                status: true
+            });
+        } else {
+            res.status(404).json({ status: false, message: "Datos incorrectos." });
+        }
+    } catch (error) {
+        res.status(500).json({ status: false, message: "Error en login." });
     }
 });
 
-// Metodo Put
+// Metodos post/put/delete
 
-// Metodo put para actualizar la contraseña de un usuario por id
+router.post('/name/:id', async (req, res) => {
+    try {
+        const user = await Usuario.findOne({ id: parseInt(req.params.id) });
+        res.status(user ? 200 : 404).json(user ? { nombre: user.nombre } : { message: 'No encontrado' });
+    } catch (e) { res.status(500).json({ message: 'Error' }); }
+});
+
+router.post('/pass/:id', async (req, res) => {
+    try {
+        const user = await Usuario.findOne({ id: parseInt(req.params.id) });
+        res.status(user ? 200 : 404).json(user ? { password: user.password } : { message: 'No encontrado' });
+    } catch (e) { res.status(500).json({ message: 'Error' }); }
+});
+
 router.put('/pass/update/:id', async (req, res) => {
-    const id = req.params.id;
-    const new_pass = req.body.password;
-
-    try{
-        const index = usuarios.findIndex(e => e.id == id);
-        if (index !== -1) {
-            usuarios[index].password = new_pass;
-            writeFile('./usuarios.json', JSON.stringify(usuarios, null, 2));
-            res.status(200).json({ message: 'Contraseña actualizada correctamente' });
-        } else {
-            res.status(404).json({ message: 'Usuario no encontrado' });
-            return;
-        }
-    }catch{
-        res.status(500).json({ message: 'Error al actualizar la contraseña' });
-    }
+    try {
+        const new_pass = await bcrypt.hash(req.body.password, 10);
+        const updated = await Usuario.findOneAndUpdate({ id: parseInt(req.params.id) }, { password: new_pass });
+        res.status(updated ? 200 : 404).json({ message: updated ? 'Actualizado' : 'No encontrado' });
+    } catch (e) { res.status(500).json({ message: 'Error' }); }
 });
 
-// Metodo Delete
-
-router.delete('/delete/:id', (req, res) => {
-        const id = req.params.id;
-    try{
-        const index = usuarios.findIndex(e => e.id == id);
-        if (index !== -1) {
-            usuarios.splice(index, 1);
-            writeFile('./usuarios.json', JSON.stringify(usuarios, null, 2));
-            res.status(200).json({ message: 'Usuario eliminado correctamente' });
-        } else {
-            res.status(404).json({ message: 'Usuario no encontrado' });
-            return;
-        }
-
-    }catch{
-        res.status(500).json({ message: 'Error al eliminar el usuario' });
-    }
-        
+router.delete('/delete/:id', async (req, res) => {
+    try {
+        const result = await Usuario.findOneAndDelete({ id: parseInt(req.params.id) });
+        res.status(result ? 200 : 404).json({ message: result ? 'Eliminado' : 'No encontrado' });
+    } catch (e) { res.status(500).json({ message: 'Error' }); }
 });
- */
 
+router.get('/productos/all', async (req, res) => {
+    try {
+        const productos = await Producto.find();
+        res.status(200).json(productos);
+    } catch (e) { res.status(500).json({ message: "Error" }); }
+});
 
+router.post('/ventas/comprar', async (req, res) => {
+    try {
+        const { username, productosCarrito, total, direccion } = req.body;
+        const userFound = await Usuario.findOne({ username });
+        const ultimaVenta = await Venta.findOne().sort({ id: -1 });
+        const nuevoIdVenta = ultimaVenta && ultimaVenta.id ? ultimaVenta.id + 1 : 5001;
+
+        const nuevaOrden = new Venta({
+            id: nuevoIdVenta,
+            id_usuario: userFound ? userFound.id : 999,
+            fecha: new Date().toISOString().split('T')[0],
+            total: total,
+            direccion: direccion,
+            productos: productosCarrito.map(p => ({ id_producto: p.id, cantidad: p.cantidad })),
+            pago_efectivo: true
+        });
+        await nuevaOrden.save();
+        res.status(201).json({ status: true, id_orden: nuevoIdVenta });
+    } catch (e) { res.status(500).json({ status: false }); }
+});
 
 export default router;

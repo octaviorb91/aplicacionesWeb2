@@ -1,0 +1,73 @@
+
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de sesión - El Emporio de las Maravillas</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+        xintegrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="../images/iconEmporio.png">
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/styles.css">
+
+</head>
+
+<body data-bs-theme="dark">
+
+  <!-- Barra de búsqueda -->
+    <div class="bg-body-tertiary py-3">
+        <div class="container d-flex justify-content-center">
+            <div class="input-group" style="max-width: 500px;">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar productos, marcas y más…" />
+            <button id="searchButton" class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+
+  <header></header>
+
+  <h1 class="text-center my-4 fw-bold">El emporio de las maravillas</h1>
+
+  <div class="d-flex justify-content-center align-items-center vh-80">
+    <div class="card p-4 shadow" style="max-width: 400px; width: 100%;">
+      <h5 class="card-header text-center">Iniciar sesión</h5>
+      <div class="card-body">
+        <form id="loginForm">
+          <div class="mb-3">
+            <input type="text" id="txtName" class="form-control" placeholder="Nombre de usuario (Ej: marty.mcfly)" required>
+          </div>
+          <div class="mb-3">
+            <input type="password" id="txtPassword" class="form-control" placeholder="Contraseña" required>
+          </div>
+          <button id="btnLogin" class="btn btn-primary w-100">Iniciar sesión</button>
+          <div class="text-center mt-3">
+            <a href="formulario.html" class="text-decoration-none">Crear cuenta</a>
+          </div>
+          <div class="mt-4 p-3 rounded bg-dark border border-secondary">
+            <h6 class="text-center fw-bold text-light mb-2">Usuarios de prueba</h6>
+              <ul class="list-unstyled mb-0 text-light small">
+                <li><i class="bi bi-person-fill"></i> usuario: <strong>cheems.perro</strong> | pass: <code>1234</code></li>
+                <li><i class="bi bi-person-fill"></i> usuario: <strong>frodo.bolson</strong> | pass: <code>1234</code></li>
+              </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center py-4 mt-5">
+    <p class="mb-0">Compra protegida · Envíos gratis desde $15.000 a todos los universos · © 2025 Emporio de las maravillas</p>
+  </footer>
+
+  <!-- Importamos el script de renderizado visual -->
+  <script type="module" src="inicioSesion.js"></script>
+  <script type="module" src="../auth/auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+          xintegrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+
+</html>

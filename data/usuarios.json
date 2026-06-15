@@ -1,74 +1,78 @@
 [
   {
+    "id": 1,
+    "nombre": "Beef",
+    "apellido": "Tannen",
+    "email": "beef@gmail.com",
+    "password": "1234",
+    "username": "beef.tannen"
+  },
+  {
     "id": 2,
-    "nombre": "Carlos",
-    "apellido": "Gómez",
-    "email": "carlos.gomez@example.com",
-    "password": "carlos456",
-    "username": "carlos.gomez"
+    "nombre": "Thanos",
+    "apellido": "De Titán",
+    "email": "thanos@gmail.com",
+    "password": "1234",
+    "username": "thanos.titan"
   },
   {
     "id": 3,
-    "nombre": "Lucía",
-    "apellido": "Martínez",
-    "email": "lucia.martinez@example.com",
-    "password": "lucia789",
-    "username": "lucia.martinez"
+    "nombre": "Marty",
+    "apellido": "McFly",
+    "email": "marty.mcfly@gmail.com",
+    "password": "88mph",
+    "username": "marty.mcfly"
   },
   {
     "id": 4,
-    "nombre": "Javier",
-    "apellido": "Rodríguez",
-    "email": "javier.rodriguez@example.com",
-    "password": "javi321",
-    "username": "javier.rodriguez"
+    "nombre": "Frodo",
+    "apellido": "Bolsón",
+    "email": "frodo.bolson@gmail.com",
+    "password": "comarca123",
+    "username": "frodo.bolson"
   },
   {
     "id": 5,
-    "nombre": "María",
-    "apellido": "Fernández",
-    "email": "maria.fernandez@example.com",
-    "password": "maria654",
-    "username": "maria.fernandez"
+    "nombre": "Tony",
+    "apellido": "Stark",
+    "email": "tony.stark@gmail.com",
+    "password": "loveu3000",
+    "username": "tony.stark"
   },
   {
     "id": 6,
-    "nombre": "Diego",
-    "apellido": "López",
-    "email": "diego.lopez@example.com",
-    "password": "diego987",
-    "username": "diego.lopez"
+    "nombre": "Gollum",
+    "apellido": "My Precious",
+    "email": "gollum@gmail.com",
+    "password": "gollum",
+    "username": "gollum.my.precious",
+    "photoUrl": "/images/gollum.my.precious.jpg"
   },
   {
     "id": 7,
-    "nombre": "Sofía",
-    "apellido": "Ramírez",
-    "email": "sofia.ramirez@example.com",
-    "password": "sofi111",
-    "username": "sofia.ramirez"
+    "nombre": "Doc",
+    "apellido": "Brown",
+    "email": "doc.brown@gmail.com",
+    "password": "docbrown",
+    "username": "doc.brown",
+    "photoUrl": "/images/doc.brown.jpg"
   },
   {
     "id": 8,
-    "nombre": "Martín",
-    "apellido": "Suárez",
-    "email": "martin.suarez@example.com",
-    "password": "martin222",
-    "username": "martin.suarez"
+    "nombre": "Sam",
+    "apellido": "Gise",
+    "email": "sam.gise@gmail.com",
+    "password": "samgise",
+    "username": "sam.gise",
+    "photoUrl": "/images/sam.gise.jpg"
   },
   {
     "id": 9,
-    "nombre": "Valentina",
-    "apellido": "Torres",
-    "email": "valentina.torres@example.com",
-    "password": "vale333",
-    "username": "valentina.torres"
-  },
-  {
-    "id": 10,
-    "nombre": "Federico",
-    "apellido": "Castro",
-    "email": "federico.castro@example.com",
-    "password": "fede444",
-    "username": "federico.castro"
+    "nombre": "Oso",
+    "apellido": "Cariñoso",
+    "email": "oso@gmail.com",
+    "password": "1234",
+    "username": "oso.cariñoso",
+    "photoUrl": "/images/oso.cariñoso.jpg"
   }
 ]

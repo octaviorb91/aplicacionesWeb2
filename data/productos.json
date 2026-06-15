@@ -1,212 +1,218 @@
 [
   {
-    "id": 101,
-    "nombre": "Notebook Lenovo",
-    "desc": "Portátil de 15 pulgadas con 8GB RAM y 256GB SSD",
-    "precio": 750000,
-    "imagen": "notebook_lenovo.jpg"
+    "id": 1,
+    "nombre": "Hoverboard",
+    "desc": "Tabla voladora original de Mattel año 2015. Flota mediante repulsión magnética a 20 cm del suelo. Precaución: no funciona sobre el agua.",
+    "precio": 12170,
+    "imagen": "hoverBoard.png",
+    "categoria": "backToFuture"
   },
   {
-    "id": 102,
-    "nombre": "Mouse inalámbrico Logitech",
-    "desc": "Mouse ergonómico con conexión Bluetooth",
-    "precio": 15000,
-    "imagen": "mouse_logitech.jpg"
+    "id": 2,
+    "nombre": "Almanaque deportivo",
+    "desc": "El libro original de Biff Tannen con todos los resultados deportivos reales desde 1950 hasta el 2000. Tu riqueza está garantizada.",
+    "precio": 64999,
+    "imagen": "sportsAlmanac.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 103,
-    "nombre": "Teclado mecánico Redragon",
-    "desc": "Teclado gamer con retroiluminación RGB",
-    "precio": 45000,
-    "imagen": "teclado_redragon.jpg"
+    "id": 3,
+    "nombre": "Condensador de flujo",
+    "desc": "El componente que hace posible los viajes en el tiempo. Requiere una descarga exacta de 1.21 gigavatios para activarse.",
+    "precio": 523170,
+    "imagen": "condensadorDeFlujo.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 104,
-    "nombre": "Monitor Samsung 24''",
-    "desc": "Monitor LED Full HD con entrada HDMI",
-    "precio": 120000,
-    "imagen": "monitor_samsung.jpg"
-  },
-  {
-    "id": 105,
-    "nombre": "Auriculares Sony WH-1000XM4",
-    "desc": "Auriculares inalámbricos con cancelación de ruido",
-    "precio": 220000,
-    "imagen": "auriculares_sony.jpg"
-  },
-  {
-    "id": 106,
-    "nombre": "Smartphone Samsung Galaxy S25",
-    "desc": "Celular con pantalla AMOLED y 256GB de almacenamiento",
-    "precio": 950000,
-    "imagen": "galaxy_s25.jpg"
-  },
-  {
-    "id": 107,
-    "nombre": "iPhone 15 Pro",
-    "desc": "Smartphone Apple con chip A17 y cámara triple",
-    "precio": 1200000,
-    "imagen": "iphone15pro.jpg"
-  },
-  {
-    "id": 108,
-    "nombre": "Tablet iPad Air",
-    "desc": "Pantalla de 10.9 pulgadas y chip M1",
-    "precio": 800000,
-    "imagen": "ipad_air.jpg"
-  },
-  {
-    "id": 109,
-    "nombre": "Impresora HP DeskJet",
-    "desc": "Impresora multifunción con WiFi",
-    "precio": 95000,
-    "imagen": "impresora_hp.jpg"
-  },
-  {
-    "id": 110,
-    "nombre": "Disco externo Seagate 2TB",
-    "desc": "Disco duro portátil USB 3.0",
+    "id": 10,
+    "nombre": "Chaqueta Autoajustable de Marty",
+    "desc": "Tecnología del futuro. Se adapta instantáneamente al tamaño de tu cuerpo y cuenta con un sistema de secado ultrasónico por voz si te caés al agua.",
     "precio": 85000,
-    "imagen": "disco_seagate.jpg"
+    "imagen": "chaqueta.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 111,
-    "nombre": "SSD Kingston 1TB",
-    "desc": "Unidad de estado sólido NVMe",
-    "precio": 110000,
-    "imagen": "ssd_kingston.jpg"
-  },
-  {
-    "id": 112,
-    "nombre": "Cámara Canon EOS Rebel",
-    "desc": "Cámara réflex digital con lente 18-55mm",
-    "precio": 600000,
-    "imagen": "canon_eos.jpg"
-  },
-  {
-    "id": 113,
-    "nombre": "Parlante JBL Flip 6",
-    "desc": "Parlante portátil Bluetooth resistente al agua",
-    "precio": 95000,
-    "imagen": "jbl_flip6.jpg"
-  },
-  {
-    "id": 114,
-    "nombre": "Smartwatch Apple Watch SE",
-    "desc": "Reloj inteligente con monitoreo de salud",
-    "precio": 250000,
-    "imagen": "apple_watch_se.jpg"
-  },
-  {
-    "id": 115,
-    "nombre": "Smartwatch Samsung Galaxy Watch",
-    "desc": "Reloj inteligente con GPS y NFC",
-    "precio": 230000,
-    "imagen": "galaxy_watch.jpg"
-  },
-  {
-    "id": 116,
-    "nombre": "Consola PlayStation 5",
-    "desc": "Consola de videojuegos con SSD ultrarrápido",
-    "precio": 1300000,
-    "imagen": "ps5.jpg"
-  },
-  {
-    "id": 117,
-    "nombre": "Consola Xbox Series X",
-    "desc": "Consola de videojuegos con 1TB SSD",
-    "precio": 1250000,
-    "imagen": "xbox_seriesx.jpg"
-  },
-  {
-    "id": 118,
-    "nombre": "Nintendo Switch OLED",
-    "desc": "Consola híbrida con pantalla OLED",
-    "precio": 900000,
-    "imagen": "switch_oled.jpg"
-  },
-  {
-    "id": 119,
-    "nombre": "Router TP-Link Archer",
-    "desc": "Router WiFi 6 de alta velocidad",
-    "precio": 70000,
-    "imagen": "router_tplink.jpg"
-  },
-  {
-    "id": 120,
-    "nombre": "Proyector Epson",
-    "desc": "Proyector Full HD para oficina o cine en casa",
-    "precio": 350000,
-    "imagen": "proyector_epson.jpg"
-  },
-  {
-    "id": 121,
-    "nombre": "Silla gamer DXRacer",
-    "desc": "Silla ergonómica con soporte lumbar",
-    "precio": 180000,
-    "imagen": "silla_dxracer.jpg"
-  },
-  {
-    "id": 122,
-    "nombre": "Escritorio regulable",
-    "desc": "Escritorio ajustable en altura para oficina",
-    "precio": 200000,
-    "imagen": "escritorio_regulable.jpg"
-  },
-  {
-    "id": 123,
-    "nombre": "Lámpara LED de escritorio",
-    "desc": "Lámpara con luz regulable y puerto USB",
-    "precio": 25000,
-    "imagen": "lampara_led.jpg"
-  },
-  {
-    "id": 124,
-    "nombre": "Cafetera Nespresso",
-    "desc": "Cafetera automática para cápsulas",
-    "precio": 120000,
-    "imagen": "cafetera_nespresso.jpg"
-  },
-  {
-    "id": 125,
-    "nombre": "Heladera Samsung",
-    "desc": "Heladera No Frost con freezer inferior",
+    "id": 11,
+    "nombre": "Zapatillas Nike Mag",
+    "desc": "Calzado de ciencia ficción real con sistema de cordones electrónicos autoajustables automatizados y paneles de luz de neón de alta duración.",
     "precio": 950000,
-    "imagen": "heladera_samsung.jpg"
+    "imagen": "nikemag.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 126,
-    "nombre": "Microondas LG",
-    "desc": "Microondas digital con grill",
-    "precio": 80000,
-    "imagen": "microondas_lg.jpg"
+    "id": 12,
+    "nombre": "Barra de Plutonio puro",
+    "desc": "Elemento radiactivo real extraído para alimentar el reactor de fusión del DeLorean. Manejar con trajes de protección NBQ incluidos.",
+    "precio": 15000,
+    "imagen": "barraplutonio.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 127,
-    "nombre": "Lavarropas Whirlpool",
-    "desc": "Lavarropas automático de 8kg",
-    "precio": 600000,
-    "imagen": "lavarropas_whirlpool.jpg"
+    "id": 13,
+    "nombre": "Mr. Fusion Home Energy Reactor",
+    "desc": "Reactor de fusión casero. Convierte cualquier desecho doméstico o basura orgánica directamente en energía pura de 1.21 gigowatts.",
+    "precio": 22000,
+    "imagen": "reactor.jpg",
+    "categoria": "backToFuture"
   },
   {
-    "id": 128,
-    "nombre": "Aspiradora Philips",
-    "desc": "Aspiradora ciclónica sin bolsa",
-    "precio": 95000,
-    "imagen": "aspiradora_philips.jpg"
-  },
-  {
-    "id": 129,
-    "nombre": "Ventilador de pie Liliana",
-    "desc": "Ventilador de 3 velocidades con oscilación",
+    "id": 14,
+    "nombre": "Estación de Reparación de Trenes del Tiempo",
+    "desc": "Planos y herramientas cuánticas diseñadas por Doc Brown para convertir locomotoras a vapor en naves capaces de romper la barrera del espacio-tiempo.",
     "precio": 45000,
-    "imagen": "ventilador_liliana.jpg"
+    "imagen": "reparaciontrenes.png",
+    "categoria": "backToFuture"
   },
   {
-    "id": 130,
-    "nombre": "Televisor LG 55''",
-    "desc": "Smart TV 4K UHD con WebOS",
-    "precio": 700000,
-    "imagen": "tv_lg55.jpg"
+    "id": 15,
+    "nombre": "Maletín con Divisas del Tiempo",
+    "desc": "Maletín oficial de Doc con billetes reales y corrientes de diferentes épocas y siglos (XIX, XX y XXI) para evitar paradojas temporales.",
+    "precio": 8500,
+    "imagen": "maletinDivisas.png",
+    "categoria": "backToFuture"
+  },
+  {
+    "id": 4,
+    "nombre": "Anillo único",
+    "desc": "Forjado por Sauron en los fuegos del Monte del Destino. Concede invisibilidad total al portador y el control absoluto sobre los demás anillos de poder.",
+    "precio": 2666999.6,
+    "imagen": "anillo.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 5,
+    "nombre": "Bastón de Gandalf el gris",
+    "desc": "Canalizador mágico forjado en los bosques de Valinor. Capaz de emitir destellos de luz segadora, quebrar estructuras y repeler criaturas oscuras.",
+    "precio": 109200,
+    "imagen": "bastonGandalf.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 6,
+    "nombre": "Luz de Eärendil",
+    "desc": "Frasco de cristal mágico que contiene el agua bendita con la luz de la estrella más querida. Proporciona luz en los lugares más oscuros cuando las demás luces se apagan.",
+    "precio": 58600,
+    "imagen": "frascoGaladriel.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 16,
+    "nombre": "Espada Andúril de Aragorn",
+    "desc": "La Llama del Oeste, forjada a partir de los fragmentos de Narsil. Su hoja mágica convoca y comanda al ejército de los muertos vivientes.",
+    "precio": 350000,
+    "imagen": "anduril.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 17,
+    "nombre": "Daga Dardo (Sting)",
+    "desc": "Hoja élfica milenaria. Su acero místico brilla con una intensa luz azul brillante cuando hay orcos o trasgos a menos de un kilómetro a la redonda.",
+    "precio": 140000,
+    "imagen": "sting.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 18,
+    "nombre": "Capa Élfica de Lothlórien",
+    "desc": "Tejida por la mismísima Dama Galadriel. Su tejido mágico mimetiza al portador con el entorno, volviéndolo indetectable al ojo enemigo.",
+    "precio": 38000,
+    "imagen": "capaElfica.png",
+    "categoria": "lotr"
+  },
+  {
+    "id": 19,
+    "nombre": "Palantír de Orthanc",
+    "desc": "Piedra vidente ancestral. Permite observar eventos en cualquier rincón del mundo y comunicarte mentalmente a través del espacio y el tiempo.",
+    "precio": 75000,
+    "imagen": "palantir.png",
+    "categoria": "lotr"
+  },
+  {
+    "id": 20,
+    "nombre": "Pan de Lembas Fresh",
+    "desc": "Auténtico pan del camino élfico. Un solo mordisco de esta hoja es capaz de mantener lleno y con energía a un hombre adulto durante días de marcha.",
+    "precio": 29000,
+    "imagen": "lembas.jpg",
+    "categoria": "lotr"
+  },
+  {
+    "id": 21,
+    "nombre": "Mithril Shirt",
+    "desc": "Cota de malla forjada por enanos en Moria. Ligera como una pluma, pero totalmente indestructible por lanzas, flechas o garras de dragón.",
+    "precio": 12000,
+    "imagen": "mithril.png",
+    "categoria": "lotr"
+  },
+  {
+    "id": 7,
+    "nombre": "Teseracto",
+    "desc": "Cubo cristalino cósmico que contiene la Gema del Espacio. Otorga control absoluto sobre el espacio, permitiendo crear portales interdimensionales al instante.",
+    "precio": 15825999.5,
+    "imagen": "teseract.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 8,
+    "nombre": "Guante del infinito",
+    "desc": "Forjado en uru por los enanos de Nidavellir. Canaliza el poder de las 6 Gemas del Infinito; un solo chasquido basta para borrar la mitad del universo.",
+    "precio": 256999.99,
+    "imagen": "guanteInfinito.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 9,
+    "nombre": "Mjolnir",
+    "desc": "Martillo místico asgardiano forjado en el corazón de una estrella moribunda. Controla las tormentas y los rayos. Nota: Solo puede ser levantado por alguien digno.",
+    "precio": 125999,
+    "imagen": "mjolnir.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 22,
+    "nombre": "Escudo de Vibranium",
+    "desc": "El escudo original del Capitán América. Fabricado con vibranium puro de Wakanda. Absorbe el 100% del impacto cinético de cualquier golpe o explosión sin recibir daño.",
+    "precio": 280000,
+    "imagen": "escudo.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 23,
+    "nombre": "Nano-Armadura Iron Man Mk85",
+    "desc": "Último modelo de Tony Stark basado en nanotecnología habitacional. Se despliega desde tu pecho y materializa escudos, propulsores y cañones repulsores reales.",
+    "precio": 420000,
+    "imagen": "ironMan.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 24,
+    "nombre": "Ojo de Agamotto",
+    "desc": "Amuleto místico de Kamar-Taj que resguarda la Gema del Tiempo. Permite rebobinar, adelantar o encerrar eventos específicos en bucles temporales infinitos.",
+    "precio": 89000,
+    "imagen": "agamotto.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 25,
+    "nombre": "Suero del Súper Soldado",
+    "desc": "Fórmula química original del Dr. Erskine. Incrementa al máximo absoluto el rendimiento físico, fuerza, velocidad y resistencia del cuerpo humano.",
+    "precio": 54000,
+    "imagen": "suero.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 26,
+    "nombre": "Stormbreaker",
+    "desc": "Hacha rompe-tormentas forjada para Thor. Capaz de convocar el Bifröst para teletransportarte a cualquier planeta de los Nueve Reinos de inmediato.",
+    "precio": 95000,
+    "imagen": "stormbreaker.jpg",
+    "categoria": "marvel"
+  },
+  {
+    "id": 27,
+    "nombre": "Flechas de Truco de Hawkeye (Pack x12)",
+    "desc": "Carcaj con puntas de tecnología Stark real. Incluye flechas con cabeza explosiva, de hackeo magnético, congelantes y con gancho de escalada de alta resistencia.",
+    "precio": 18500,
+    "imagen": "carcaj.jpg",
+    "categoria": "marvel"
   }
 ]
