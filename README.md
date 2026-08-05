@@ -1,24 +1,53 @@
-# aplicacionesWeb2
-Repositorio de la materia Aplicaciones Web 2 de IES
+# Plataforma E-Commerce (Full Stack) - Gestión de Usuarios
 
-Rutas utilizadas:
+Este proyecto es una aplicación web Full Stack orientada al comercio electrónico, desarrollada como parte de la currícula de Aplicaciones Web 2 (IES). El enfoque principal del repositorio está en la arquitectura del Backend (API REST) y la implementación de un sistema seguro de autenticación y gestión de usuarios, integrado con una interfaz Frontend interactiva.
 
-Metodo GET
+## Tecnologías Utilizadas
 
-users/all >> selecciona todos los usuarios
+**Frontend:**
+* HTML5, CSS3 y JavaScript (Vanilla).
+* Bootstrap para diseño responsivo y maquetación de vistas.
 
-users/names >> selecciona los nombres de todos los usuarios
+**Backend & Base de Datos:**
+* Node.js y Express.js para la creación del servidor y enrutamiento.
+* MongoDB (NoSQL) para el almacenamiento flexible de datos.
 
-Metodo POST
+**Seguridad:**
+* **Bcrypt:** Encriptación y hashing de contraseñas de usuarios.
+* **JWT (JSON Web Tokens):** Manejo seguro de sesiones y caducidad de tokens para el inicio de sesión.
 
-users/name/:id >> muestra el nombre del usuario según el Id seleccionado
+## Instalación y Ejecución Local
 
-users/pass/:id >> muestra la contraseña del usuario según el Id seleccionado
+Para correr este proyecto en tu entorno local, sigue estos pasos:
 
-Metodo PUT
+1. Clona el repositorio:
+   ```bash
+   git clone [https://github.com/tu-usuario/AplicacionesWeb2.git](https://github.com/tu-usuario/AplicacionesWeb2.git)
+   ```
+2. Instala las dependencias del proyecto:
+   ```bash
+   npm install
+   ```
+3. Ejecuta el servidor en modo desarrollo:
+   ```bash
+   npm run dev
+   ```
+*(Nota: El archivo `.env` con las variables de entorno necesarias para la conexión y el secret de JWT se encuentra incluido temporalmente en este repositorio para facilitar la revisión del proyecto).*
 
-pass/update/:id >> actualiza la contraseña de un usuario por Id
+## Endpoints de la API (Rutas)
 
-Metodo DELETE
+La API cuenta con las siguientes rutas para la gestión integral de usuarios (CRUD):
 
-delete/:id >> elimina un usuario seleccionado por Id
+**Lectura (GET)**
+* `/users/all` : Retorna el listado completo de usuarios registrados.
+* `/users/names` : Retorna exclusivamente los nombres de todos los usuarios.
+
+**Consultas Específicas (POST)**
+* `/users/name/:id` : Retorna el nombre del usuario correspondiente al ID indicado.
+* `/users/pass/:id` : Retorna la contraseña (hash) del usuario correspondiente al ID indicado.
+
+**Actualización (PUT)**
+* `/pass/update/:id` : Actualiza y re-encripta la contraseña de un usuario específico.
+
+**Eliminación (DELETE)**
+* `/delete/:id` : Elimina permanentemente a un usuario de la base de datos según su ID.
