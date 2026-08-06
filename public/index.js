@@ -82,7 +82,7 @@ window.addEventListener('load', async () => {
       } else {
         userButtonContainer.innerHTML = `
           <button class="btn btn-success rounded-pill me-2" 
-                  onclick="window.location.href='${window.location.origin}/pages/inicioSesion.html'">
+                  onclick="window.location.href='${window.location.origin}/pages/InicioSesion.html'">
             <i class="bi bi-person-circle"></i>
           </button>
         `
@@ -122,7 +122,7 @@ window.addEventListener('load', async () => {
   // Cierre de sesión global
   window.logout = () => {
     sessionStorage.clear()
-    window.location.href = "../pages/inicioSesion.html"
+    window.location.href = "../pages/InicioSesion.html"
   }
 
   // Sistema de búsqueda unificado y centralizado con el Backend
