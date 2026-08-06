@@ -29,7 +29,7 @@ window.addEventListener('load', async () => {
     container.innerHTML = `
       <div class="col-12 text-center mt-5">
         <p class="text-danger fw-bold">No hay ninguna sesión activa.</p>
-        <a href="../pages/inicioSesion.html" class="btn btn-primary mt-3">Ir a Iniciar Sesión</a>
+        <a href="../pages/InicioSesion.html" class="btn btn-primary mt-3">Ir a Iniciar Sesión</a>
       </div>
     `
   }
@@ -38,5 +38,5 @@ window.addEventListener('load', async () => {
 // Función global de cierre de sesión
 window.logout = () => {
   sessionStorage.clear();
-  window.location.href = "../pages/inicioSesion.html"
+  window.location.href = "../pages/InicioSesion.html"
 }

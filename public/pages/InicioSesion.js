@@ -11,5 +11,5 @@ window.addEventListener("load", () => {
 // Función global de cierre de sesión
 window.logout = () => {
   sessionStorage.clear()
-  window.location.href = "../pages/inicioSesion.html"
+  window.location.href = "../pages/InicioSesion.html"
 }

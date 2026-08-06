@@ -99,7 +99,7 @@ const procesarCompra = async () => {
     // Validar que el usuario esté logueado
     if (!userData) {
         alert("¡Atención! Debes iniciar sesión en tu cuenta para poder finalizar la compra.");
-        window.location.href = "../pages/inicioSesion.html";
+        window.location.href = "../pages/InicioSesion.html";
         return;
     }
 
