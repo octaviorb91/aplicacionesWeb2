@@ -13,11 +13,12 @@ mongoose.set('bufferCommands', false);
 export const connectDB = async () => {
     try {
         const uri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/emporio_maravillas';
-        // Configuramos un tiempo máximo de espera de 3 segundos
-        await mongoose.connect(uri, { serverSelectionTimeoutMS: 3000 });
+        // Ampliamos un poco el timeout a 5 segundos, la nube a veces tiene latencia
+        await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
         console.log('🟢 Conectado exitosamente a la base de datos MongoDB');
     } catch (error) {
-        console.error('No se pudo conectar a MongoDB. El servidor local de Mongo no está respondiendo.');
+        console.error('🔴 Error REAL al conectar a MongoDB:', error.message);
+        throw error; // Esto es vital para que index.js no arranque el servidor a la fuerza
     }
 };
 
