@@ -121,14 +121,19 @@ const procesarCompra = async () => {
         btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Procesando...';
         btn.disabled = true;
 
+        // 1. Recuperamos el token que guardamos al hacer Login
+        const token = sessionStorage.getItem("token");
+
         // Realizar la peticion POST al backend
         const response = await fetch("/users/ventas/comprar", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                // 2. Agregamos el pase VIP en los encabezados
+                "Authorization": `Bearer ${token}` 
             },
             body: JSON.stringify({
-                username: userData.username,
+                // 3. Ya no hace falta el username acá abajo, el backend lo saca del token
                 productosCarrito: productosParaAPI,
                 total: totalCompra,
                 direccion: "Retiro en sucursal principal"

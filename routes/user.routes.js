@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 import fs from 'fs';
 import bcrypt from 'bcrypt';
 import { Usuario, Venta } from '../models/db.js';
+import jwt from 'jsonwebtoken';
+import { verificarToken } from '../middlewares/auth.middleware.js';
 
 const router = Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -79,14 +81,25 @@ router.post('/login', async (req, res) => {
         const user = await Usuario.findOne({ username: username });
 
         if (user && await bcrypt.compare(password, user.password)) {
+            // GENERAMOS EL TOKEN (Guardamos su ID y Username)
+            const token = jwt.sign(
+                { id: user.id, username: user.username },
+                process.env.JWT_SECRET,
+                { expiresIn: '2h' } // Expira en 2 horas
+            );
+
+            // Enviamos el token y los datos
             res.status(200).json({
-                id: user.id,
-                nombre: user.nombre,
-                apellido: user.apellido,
-                username: user.username,
-                email: user.email,
-                photoUrl: user.photoUrl,
-                status: true
+                status: true,
+                token: token, // ¡Acá va el pase VIP!
+                user: {
+                    id: user.id,
+                    nombre: user.nombre,
+                    apellido: user.apellido,
+                    username: user.username,
+                    email: user.email,
+                    photoUrl: user.photoUrl
+                }
             });
         } else {
             res.status(404).json({ status: false, message: "Datos incorrectos." });
@@ -96,16 +109,19 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/ventas/comprar', async (req, res) => {
+// Agregamos "verificarToken" como segundo parámetro
+router.post('/ventas/comprar', verificarToken, async (req, res) => {
     try {
-        const { username, productosCarrito, total, direccion } = req.body;
-        const userFound = await Usuario.findOne({ username });
+        // Ya no pedimos el username del body, lo sacamos del token seguro!
+        const { productosCarrito, total, direccion } = req.body;
+        const usuarioSeguro = req.usuario; // Esto viene de auth.middleware.js
+
         const ultimaVenta = await Venta.findOne().sort({ id: -1 });
         const nuevoIdVenta = ultimaVenta && ultimaVenta.id ? ultimaVenta.id + 1 : 5001;
 
         const nuevaOrden = new Venta({
             id: nuevoIdVenta,
-            id_usuario: userFound ? userFound.id : 999,
+            id_usuario: usuarioSeguro.id, // Usamos el ID del token
             fecha: new Date().toISOString().split('T')[0],
             total: total,
             direccion: direccion,
@@ -114,7 +130,9 @@ router.post('/ventas/comprar', async (req, res) => {
         });
         await nuevaOrden.save();
         res.status(201).json({ status: true, id_orden: nuevoIdVenta });
-    } catch (e) { res.status(500).json({ status: false }); }
+    } catch (e) { 
+        res.status(500).json({ status: false, message: "Error en la compra" }); 
+    }
 });
 
 export default router;
