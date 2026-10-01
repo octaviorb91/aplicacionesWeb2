@@ -22,7 +22,7 @@ Para correr este proyecto en tu entorno local, sigue estos pasos:
 
 1. Clona el repositorio:
    ```bash
-   git clone [https://github.com/tu-usuario/AplicacionesWeb2.git](https://github.com/tu-usuario/AplicacionesWeb2.git)
+   git clone [https://github.com/octaviorb91/AplicacionesWeb2.git](https://github.com/octaviorb91/AplicacionesWeb2.git)
    ```
 2. Instala las dependencias del proyecto:
    ```bash
@@ -34,20 +34,3 @@ Para correr este proyecto en tu entorno local, sigue estos pasos:
    ```
 *(Nota: El archivo `.env` con las variables de entorno necesarias para la conexión y el secret de JWT se encuentra incluido temporalmente en este repositorio para facilitar la revisión del proyecto).*
 
-## Endpoints de la API (Rutas)
-
-La API cuenta con las siguientes rutas para la gestión integral de usuarios (CRUD):
-
-**Lectura (GET)**
-* `/users/all` : Retorna el listado completo de usuarios registrados.
-* `/users/names` : Retorna exclusivamente los nombres de todos los usuarios.
-
-**Consultas Específicas (POST)**
-* `/users/name/:id` : Retorna el nombre del usuario correspondiente al ID indicado.
-* `/users/pass/:id` : Retorna la contraseña (hash) del usuario correspondiente al ID indicado.
-
-**Actualización (PUT)**
-* `/pass/update/:id` : Actualiza y re-encripta la contraseña de un usuario específico.
-
-**Eliminación (DELETE)**
-* `/delete/:id` : Elimina permanentemente a un usuario de la base de datos según su ID.
