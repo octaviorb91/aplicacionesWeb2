@@ -3,8 +3,8 @@ import { writeFile } from 'fs/promises';
 import path from "path";
 import { fileURLToPath } from "url";
 import fs from 'fs';
-import bcrypt from 'bcrypt'; // Importamos bcrypt
-import { Usuario, Producto, Venta } from '../models/db.js';
+import bcrypt from 'bcrypt';
+import { Usuario, Venta } from '../models/db.js';
 
 const router = Router();
 const __filename = fileURLToPath(import.meta.url);
@@ -36,27 +36,6 @@ const guardarFotoBase64 = async (base64String, username) => {
     }
 };
 
-// MÉTODOS GET
-router.get('/all', async (req, res) => {
-    try {
-        const usuarios = await Usuario.find();
-        res.status(200).json(usuarios);
-    } catch (error) {
-        res.status(500).json({ status: false, message: "Error interno." });
-    }
-});
-
-router.get('/names', async (req, res) => {
-    try {
-        const usuarios = await Usuario.find({}, 'nombre');
-        const nombres = usuarios.map(u => u.nombre);
-        res.status(200).json(nombres);
-    } catch (err) {
-        res.status(500).json({ message: 'Error al obtener los nombres' });
-    }
-});
-
-// MÉTODOS POST (Registro y Login con Bcrypt)
 router.post('/register', async (req, res) => {
     try {
         const { nombre, apellido, email, password, username, photoBase64 } = req.body;
@@ -68,7 +47,6 @@ router.post('/register', async (req, res) => {
         const existeEmail = await Usuario.findOne({ email: new RegExp(`^${email}$`, 'i') });
         if (existeEmail) return res.status(400).json({ status: false, message: "El correo ya existe." });
 
-        // Encriptamos la contraseña
         const saltRounds = 10;
         const hashedPassword = await bcrypt.hash(password, saltRounds);
 
@@ -83,7 +61,7 @@ router.post('/register', async (req, res) => {
             nombre,
             apellido: apellido || "",
             email,
-            password: hashedPassword, // Guardamos el hash
+            password: hashedPassword,
             username: username || `${nombre.toLowerCase()}.${(apellido || '').toLowerCase()}`,
             photoUrl: photoUrlFinal
         });
@@ -100,7 +78,6 @@ router.post('/login', async (req, res) => {
         const { username, password } = req.body;
         const user = await Usuario.findOne({ username: username });
 
-        // Comparamos el password ingresado con el hash almacenado
         if (user && await bcrypt.compare(password, user.password)) {
             res.status(200).json({
                 id: user.id,
@@ -117,44 +94,6 @@ router.post('/login', async (req, res) => {
     } catch (error) {
         res.status(500).json({ status: false, message: "Error en login." });
     }
-});
-
-// Metodos post/put/delete
-
-router.post('/name/:id', async (req, res) => {
-    try {
-        const user = await Usuario.findOne({ id: parseInt(req.params.id) });
-        res.status(user ? 200 : 404).json(user ? { nombre: user.nombre } : { message: 'No encontrado' });
-    } catch (e) { res.status(500).json({ message: 'Error' }); }
-});
-
-router.post('/pass/:id', async (req, res) => {
-    try {
-        const user = await Usuario.findOne({ id: parseInt(req.params.id) });
-        res.status(user ? 200 : 404).json(user ? { password: user.password } : { message: 'No encontrado' });
-    } catch (e) { res.status(500).json({ message: 'Error' }); }
-});
-
-router.put('/pass/update/:id', async (req, res) => {
-    try {
-        const new_pass = await bcrypt.hash(req.body.password, 10);
-        const updated = await Usuario.findOneAndUpdate({ id: parseInt(req.params.id) }, { password: new_pass });
-        res.status(updated ? 200 : 404).json({ message: updated ? 'Actualizado' : 'No encontrado' });
-    } catch (e) { res.status(500).json({ message: 'Error' }); }
-});
-
-router.delete('/delete/:id', async (req, res) => {
-    try {
-        const result = await Usuario.findOneAndDelete({ id: parseInt(req.params.id) });
-        res.status(result ? 200 : 404).json({ message: result ? 'Eliminado' : 'No encontrado' });
-    } catch (e) { res.status(500).json({ message: 'Error' }); }
-});
-
-router.get('/productos/all', async (req, res) => {
-    try {
-        const productos = await Producto.find();
-        res.status(200).json(productos);
-    } catch (e) { res.status(500).json({ message: "Error" }); }
 });
 
 router.post('/ventas/comprar', async (req, res) => {

@@ -1,6 +1,3 @@
-// components/cards.js
-import { addToCart } from "../../utils/localStorage.controller.js";
-
 const formatPrice = (price) => {
   return `$${price.toLocaleString("es-AR")}`
 }
